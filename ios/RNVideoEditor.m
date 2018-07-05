@@ -39,8 +39,8 @@ RCT_EXPORT_METHOD(merge:(NSArray *)fileNames
     AVMutableCompositionTrack *videoTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeVideo
                                                                         preferredTrackID:kCMPersistentTrackID_Invalid];
     
-    AVMutableCompositionTrack *audioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio
-                                                                        preferredTrackID:kCMPersistentTrackID_Invalid];
+//     AVMutableCompositionTrack *audioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio
+//                                                                         preferredTrackID:kCMPersistentTrackID_Invalid];
     
     CMTime insertTime = kCMTimeZero;
     CGAffineTransform originalTransform;
@@ -57,10 +57,10 @@ RCT_EXPORT_METHOD(merge:(NSArray *)fileNames
                              atTime:insertTime
                               error:nil];
         
-        [audioTrack insertTimeRange:timeRange
-                            ofTrack:[[asset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0]
-                             atTime:insertTime
-                              error:nil];
+//         [audioTrack insertTimeRange:timeRange
+//                             ofTrack:[[asset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0]
+//                              atTime:insertTime
+//                               error:nil];
         
         insertTime = CMTimeAdd(insertTime,asset.duration);
         
